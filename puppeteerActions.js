@@ -80,14 +80,6 @@ async function selectDatabase(page, dataBase) {
 
     console.log("Clicked on ", closestMatch.value);
 
-    console.log('Expanding "Pavement Sections" menu...');
-    await retryClick(page, '#togglePavementSections');
-    await page.waitForSelector('#pavementSections.menu-dropdown.collapse.show', { visible: true });
-
-    console.log('Clicking on "Road Names"...');
-    await retryClick(page, '#linkRdNames');
-    await page.waitForSelector('#ctl00_ContentPlaceHolder1_grdEDIT_grdData', { visible: true });
-
   } catch (error) {
     console.error('Error during database selection:', error.message);
   }
